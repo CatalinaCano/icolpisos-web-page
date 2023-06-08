@@ -75,6 +75,9 @@ html {
   scroll-behavior: smooth;
 }
 
+
+
+
 /*Estilos del Header*/
 .barra-superior,
 nav,
@@ -112,6 +115,14 @@ nav ul,
 .caja-icono {
   max-width: 25px;
 }
+
+.info-contacto{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
 .nombre-marca {
   font-size: clamp(0.75rem, 0.645rem + 0.52vw, 1.563rem);
   white-space: nowrap;
@@ -142,6 +153,25 @@ nav ul li > a:hover {
   padding: 5px 7px;
   border-radius: 30px;
 }
+
+/*Botón de Whatsapp*/
+.btn-whatsapp{
+ width: 60px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+
+}
+
+.btn-whatsapp img{
+  transition: all ease-in 0.5s;
+}
+
+.btn-whatsapp :hover img{
+  width: 70px;
+}
+
 /*Seccion presentacion*/
 
 #slider {
