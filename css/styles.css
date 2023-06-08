@@ -32,7 +32,6 @@
 /* Reinicio del margen para todos los elementos */
 * {
   margin: 0;
-
 }
 
 /* Estilo para hacer que las imagenes se adapten al tamaño de su contenedor*/
@@ -40,6 +39,7 @@ img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  object-position: center;
 }
 
 /*Importacion de fuentes locales*/
@@ -84,10 +84,10 @@ nav ul,
   justify-content: space-between;
   align-items: center;
   color: var(--white);
-  width: 100vw;
   padding: 0 30px;
   text-transform: uppercase;
   overflow: hidden; 
+  width: 100%;
 }
 
 /* Barra Superior*/
@@ -98,7 +98,8 @@ nav ul,
 
 .barra-superior small,
 .nombre-marca,
-nav ul {
+nav ul,
+.info-contacto {
   animation: aparecer-derecha 1s ease-in;
 }
 
@@ -176,7 +177,6 @@ nav ul li > a:hover {
 }
 
 /*Seccion Logo*/
-
 .img-logo-container {
   height: 50vh;
   padding: 30px;
