@@ -16,8 +16,8 @@
   --white: #fff;
   --dark-blue: #081158;
   --yellow: #f2c43e;
-  --grey:#535353;
-  --blue:#2553A8;
+  --grey: #535353;
+  --blue: #2553a8;
   --indigo: #6610f2;
   --purple: #6f42c1;
   --pink: #e83e8c;
@@ -36,11 +36,19 @@
   margin: 0;
 }
 
-/*Estilos Generales*/
-h2{
+/*Estilos Generales para los titulos*/
+h2 {
   color: var(--grey);
 }
-section{
+
+/*Estilos generales para las etiquetas a */
+a {
+  color: white;
+  text-decoration: none;
+}
+
+/*Estilos generales que aplican a las secciones*/
+section {
   margin-top: 3rem;
 }
 
@@ -85,12 +93,6 @@ html {
   scroll-behavior: smooth;
 }
 
-a{
-  color: white;
-  text-decoration: none;
-}
-
-
 /*Estilos del Header*/
 .barra-superior,
 nav,
@@ -102,7 +104,7 @@ nav ul,
   color: var(--white);
   padding: 0 30px;
   text-transform: uppercase;
-  overflow: hidden; 
+  overflow: hidden;
   width: 100%;
 }
 
@@ -117,8 +119,7 @@ nav ul,
 .nombre-marca,
 nav ul,
 .info-contacto,
-.btn-whatsapp
- {
+.btn-whatsapp {
   animation: aparecer-derecha 1s ease-in;
 }
 
@@ -132,7 +133,7 @@ nav ul,
   max-width: 25px;
 }
 
-.info-contacto{
+.info-contacto {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -163,7 +164,7 @@ nav ul li > a {
   color: var(--white);
 }
 
-nav ul li{
+nav ul li {
   transition: all ease-in 0.5s;
 }
 
@@ -174,39 +175,37 @@ nav ul li:hover {
 }
 
 /*Botón de Whatsapp*/
-.btn-whatsapp{
- width: 60px;
+.btn-whatsapp {
+  width: 60px;
   position: fixed;
   bottom: 20px;
   right: 20px;
   cursor: pointer;
-z-index: 2;
-
+  z-index: 2;
 }
 
-.btn-whatsapp img{
+.btn-whatsapp img {
   transition: all ease-in 0.5s;
 }
 
-.btn-whatsapp :hover img{
+.btn-whatsapp :hover img {
   width: 70px;
 }
 
 /*Seccion presentacion*/
-
 #slider {
   height: 40vh;
   background: url("../assets/img/banner-1.jpg") no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
   padding: 0;
-  margin: 0; 
+  margin: 0;
 }
 .presentacion {
   background-color: rgba(0, 0, 0, 0.5);
   text-transform: uppercase;
   text-align: center;
-  width:100%;
+  width: 100%;
   padding: 50px 0px;
 }
 
@@ -232,49 +231,39 @@ z-index: 2;
   animation: subir 1s ease-in;
 }
 
-#quienesSomos{
-  background: url('../assets/img/banner-quienes-somos.jpg') center center no-repeat;
+#quienesSomos {
+  background: url("../assets/img/banner-quienes-somos.jpg") center center
+    no-repeat;
   background-size: cover;
   height: 50vh;
-  position: relative;
+  width: 100%;
 }
 
-.descripcion{
-  width: 40vw;
+.descripcion {
+  width: 50%;
   height: 100%;
-  background-image: linear-gradient(-105deg, transparent 150px, var(--blue) 3px);
+  background-color: #2553a8;
   color: var(--white);
-  
-  hyphens:manual;
-  position: relative;
-
+  clip-path: polygon(0 0, 66% 0, 100% 100%, 0% 100%);
+  padding: 80px 50px;
 }
 
 .info-descripcion{
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 40px;
+  width: 90%;
+  hyphens: auto;
 }
 
-.info-descripcion h2{
+.info-descripcion h2 {
   color: var(--white);
   text-transform: uppercase;
   font-size: 60px;
   margin-bottom: 50px;
 }
-.info-descripcion p{
+.info-descripcion p {
   font-size: 1.5rem;
   line-height: 1.5;
 
 }
-
-
-
-
-
-
 
 /*Animaciones*/
 @keyframes subir {
