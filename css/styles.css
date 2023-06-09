@@ -17,11 +17,11 @@
   --dark-blue: #081158;
   --yellow: #f2c43e;
   --grey: #535353;
-  --light-grey:#D9D9D9;
-  --text-grey:#616161;
+  --light-grey: #d9d9d9;
+  --text-grey: #616161;
   --blue: #2553a8;
-  --black:rgba(0,0,0,0.3);
-  --soft-blue:#DBDFE8;
+  --black: rgba(0, 0, 0, 0.3);
+  --soft-blue: #dbdfe8;
 }
 
 /* Configuración de la caja de modelado para todos los elementos y sus pseudo-elementos para mantener una consistencia en la presentación */
@@ -41,7 +41,6 @@ h2 {
   color: var(--grey);
   text-transform: uppercase;
   font-size: clamp(1rem, 1.935vw + 0.613rem, 4rem);
-  /* font-size: 48px; */
   text-align: center;
 }
 
@@ -216,7 +215,7 @@ nav ul li:hover {
 }
 
 .presentacion h1,
-.presentacion h2 {
+.presentacion h3 {
   font-weight: 600;
   animation: aparecer-izquierda 1s ease-in;
   color: var(--white);
@@ -226,12 +225,12 @@ nav ul li:hover {
   font-size: clamp(2rem, 2.581vw + 1.484rem, 6rem);
   line-height: 2;
 }
-.presentacion h2 {
+.presentacion h3 {
   font-size: clamp(1rem, 0.871rem + 0.65vw, 2rem);
 }
 
 /*Seccion Logo*/
-#logo{
+#logo {
   margin-bottom: 2rem;
 }
 
@@ -243,7 +242,8 @@ nav ul li:hover {
 
 /* Sección Quiénes Somos */
 #quienesSomos {
-  background: url("../assets/img/banner-quienes-somos.jpg") center center no-repeat;
+  background: url("../assets/img/banner-quienes-somos.jpg") center center
+    no-repeat;
   background-size: cover;
   height: 50vh;
   width: 100%;
@@ -257,7 +257,6 @@ nav ul li:hover {
   /* Se utiliza la propiedad clip-path crear la forma sobre la cual va el texto */
   clip-path: polygon(0 0, 66% 0, 100% 100%, 0% 100%);
   padding: clamp(1rem, 2.581vw + 0.484rem, 5rem) 50px;
-  
 }
 
 .info-descripcion {
@@ -272,7 +271,6 @@ nav ul li:hover {
   font-size: clamp(2rem, 2.581vw + 1.484rem, 6rem);
   margin-bottom: 50px;
   text-align: left;
-
 }
 
 .info-descripcion p {
@@ -280,17 +278,14 @@ nav ul li:hover {
   line-height: 1.5;
 }
 
-
 /*Sección Promociones*/
-#promociones h2{
-    position: relative;
-
+section h2 {
+  position: relative;
 }
 
 /* Creacion de la linea que esta debajo el titulo */
-#promociones h2::before
-{
-  content: '';
+section h2::before {
+  content: "";
   position: absolute;
   width: calc(28vw);
   height: 3px;
@@ -300,17 +295,16 @@ nav ul li:hover {
   transform: translateX(10%);
 }
 
-
-.contenedor-promociones{
+.contenedor-promociones {
   margin-top: 4rem;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap:2rem;
+  gap: 2rem;
 }
 
-.flecha{
+.flecha {
   width: 70px;
   height: 70px;
   background-color: var(--blue);
@@ -321,44 +315,41 @@ nav ul li:hover {
 }
 
 .flecha:hover,
-.detalle-producto:hover{
+.detalle-producto:hover {
   background-color: var(--dark-blue);
 }
 
-
-.tarjerta-producto{
+.tarjerta-producto {
   height: 50vh;
   background-color: var(--light-grey);
   border-radius: 30px;
   flex-basis: 20%;
-  box-shadow: 5px 5px 7px var(--black) ;
+  box-shadow: 5px 5px 7px var(--black);
   cursor: pointer;
   position: relative;
-
 }
 
-.producto-nuevo{
+.producto-nuevo {
   width: 150px;
   height: 150px;
   position: absolute;
-  top:-100px;
+  top: -100px;
   right: 15%;
   z-index: 3;
   transform: rotate(20deg);
   transition: all ease-in 1s;
 }
 
-.producto-nuevo:hover{
-  transform: rotate(360deg)
+.producto-nuevo:hover {
+  transform: rotate(360deg);
 }
 
-
-.img-producto{
+.img-producto {
   height: 70%;
   padding: 2rem;
 }
 
-.detalle-producto{
+.detalle-producto {
   color: var(--white);
   background-color: var(--blue);
   padding: 30px;
@@ -371,18 +362,17 @@ nav ul li:hover {
   transition: all ease-in 0.3s;
 }
 
-.detalle-producto h3{
+.detalle-producto h3 {
   font-weight: lighter;
   font-size: 20px;
 }
 
-.precio{
+.precio {
   font-weight: bold;
   font-size: 32px;
-
 }
 
-.info-entrega{
+.info-entrega {
   margin-top: 5rem;
   width: 100%;
   padding: 30px 0;
@@ -392,7 +382,7 @@ nav ul li:hover {
   align-items: center;
 }
 
-.trajeta-iconos{
+.trajeta-iconos {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -400,23 +390,21 @@ nav ul li:hover {
   transition: all linear 0.3s;
 }
 
-
-.trajeta-iconos:hover{
-  transform: scale(1.2,1.2);
+.trajeta-iconos:hover {
+  transform: scale(1.2, 1.2);
 }
 
-.trajeta-iconos p{
+.trajeta-iconos p {
   color: var(--text-grey);
   font-size: 20px;
   text-align: center;
   margin-top: 1rem;
 }
 
-.icono-info-entrega{
+.icono-info-entrega {
   width: 100px;
   height: 100px;
 }
-
 
 /*Animaciones*/
 @keyframes subir {
