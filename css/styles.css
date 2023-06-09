@@ -17,11 +17,11 @@
   --dark-blue: #081158;
   --yellow: #f2c43e;
   --grey: #535353;
+  --light-grey:#D9D9D9;
+  --text-grey:#616161;
   --blue: #2553a8;
-  --indigo: #6610f2;
-  --purple: #6f42c1;
-  --pink: #e83e8c;
-  --red: #dc3545;
+  --black:rgba(0,0,0,0.3);
+  --soft-blue:#DBDFE8;
 }
 
 /* Configuración de la caja de modelado para todos los elementos y sus pseudo-elementos para mantener una consistencia en la presentación */
@@ -39,6 +39,10 @@
 /*Estilos Generales para los titulos*/
 h2 {
   color: var(--grey);
+  text-transform: uppercase;
+  font-size: clamp(1rem, 1.935vw + 0.613rem, 4rem);
+  /* font-size: 48px; */
+  text-align: center;
 }
 
 /*Estilos generales para las etiquetas a */
@@ -49,7 +53,7 @@ a {
 
 /*Estilos generales que aplican a las secciones*/
 section {
-  margin-top: 3rem;
+  margin-bottom: 7rem;
 }
 
 /* Estilo para hacer que las imagenes se adapten al tamaño de su contenedor*/
@@ -227,6 +231,10 @@ nav ul li:hover {
 }
 
 /*Seccion Logo*/
+#logo{
+  margin-bottom: 2rem;
+}
+
 .img-logo-container {
   height: 50vh;
   padding: 30px;
@@ -234,7 +242,6 @@ nav ul li:hover {
 }
 
 /* Sección Quiénes Somos */
-
 #quienesSomos {
   background: url("../assets/img/banner-quienes-somos.jpg") center center no-repeat;
   background-size: cover;
@@ -250,6 +257,7 @@ nav ul li:hover {
   /* Se utiliza la propiedad clip-path crear la forma sobre la cual va el texto */
   clip-path: polygon(0 0, 66% 0, 100% 100%, 0% 100%);
   padding: clamp(1rem, 2.581vw + 0.484rem, 5rem) 50px;
+  
 }
 
 .info-descripcion {
@@ -263,11 +271,152 @@ nav ul li:hover {
   text-transform: uppercase;
   font-size: clamp(2rem, 2.581vw + 1.484rem, 6rem);
   margin-bottom: 50px;
+  text-align: left;
+
 }
+
 .info-descripcion p {
   font-size: clamp(0.75rem, 0.806vw + 0.589rem, 2rem);
   line-height: 1.5;
 }
+
+
+/*Sección Promociones*/
+#promociones h2{
+    position: relative;
+
+}
+
+/* Creacion de la linea que esta debajo el titulo */
+#promociones h2::before
+{
+  content: '';
+  position: absolute;
+  width: calc(28vw);
+  height: 3px;
+  background-color: var(--blue);
+  bottom: -10px;
+  border-radius: 30px;
+  transform: translateX(10%);
+}
+
+
+.contenedor-promociones{
+  margin-top: 4rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:2rem;
+}
+
+.flecha{
+  width: 70px;
+  height: 70px;
+  background-color: var(--blue);
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  transition: all ease-in 0.3s;
+}
+
+.flecha:hover,
+.detalle-producto:hover{
+  background-color: var(--dark-blue);
+}
+
+
+.tarjerta-producto{
+  height: 50vh;
+  background-color: var(--light-grey);
+  border-radius: 30px;
+  flex-basis: 20%;
+  box-shadow: 5px 5px 7px var(--black) ;
+  cursor: pointer;
+  position: relative;
+
+}
+
+.producto-nuevo{
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top:-100px;
+  right: 15%;
+  z-index: 3;
+  transform: rotate(20deg);
+  transition: all ease-in 1s;
+}
+
+.producto-nuevo:hover{
+  transform: rotate(360deg)
+}
+
+
+.img-producto{
+  height: 70%;
+  padding: 2rem;
+}
+
+.detalle-producto{
+  color: var(--white);
+  background-color: var(--blue);
+  padding: 30px;
+  border-radius: 30px;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  transition: all ease-in 0.3s;
+}
+
+.detalle-producto h3{
+  font-weight: lighter;
+  font-size: 20px;
+}
+
+.precio{
+  font-weight: bold;
+  font-size: 32px;
+
+}
+
+.info-entrega{
+  margin-top: 5rem;
+  width: 100%;
+  padding: 30px 0;
+  background-color: var(--soft-blue);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.trajeta-iconos{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  transition: all linear 0.3s;
+}
+
+
+.trajeta-iconos:hover{
+  transform: scale(1.2,1.2);
+}
+
+.trajeta-iconos p{
+  color: var(--text-grey);
+  font-size: 20px;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.icono-info-entrega{
+  width: 100px;
+  height: 100px;
+}
+
 
 /*Animaciones*/
 @keyframes subir {
