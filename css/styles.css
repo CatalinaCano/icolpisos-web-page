@@ -347,6 +347,13 @@ section h2::before {
 .img-producto {
   height: 70%;
   padding: 2rem;
+  transition: all linear 0.5s;
+  
+}
+
+
+.img-producto :hover{
+  transform: rotate(5deg);
 }
 
 .detalle-producto {
