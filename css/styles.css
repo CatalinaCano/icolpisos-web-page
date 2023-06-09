@@ -85,7 +85,10 @@ html {
   scroll-behavior: smooth;
 }
 
-
+a{
+  color: white;
+  text-decoration: none;
+}
 
 
 /*Estilos del Header*/
@@ -177,7 +180,7 @@ nav ul li:hover {
   bottom: 20px;
   right: 20px;
   cursor: pointer;
-
+z-index: 2;
 
 }
 
