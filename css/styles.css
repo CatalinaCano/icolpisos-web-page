@@ -180,17 +180,24 @@ nav ul li:hover {
 
 /*Botón de Whatsapp*/
 .btn-whatsapp {
-  width: 60px;
+  width: clamp(2rem, 1.613vw + 1.484rem, 6rem);
   position: fixed;
   bottom: 20px;
   right: 20px;
   cursor: pointer;
   /* Se usa la propiedad z-index para colocar el boton en la primera capa siempre*/
   z-index: 2;
+  background: #4fce5d;
+  box-shadow: 0 0 0 0 rgba(79,206,93,0.5);
+  animation: circular 1s infinite;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
 }
 
 .btn-whatsapp img {
   transition: all ease-in 0.5s;
+   object-fit: cover;
 }
 
 .btn-whatsapp :hover img {
@@ -367,6 +374,7 @@ section h2::before {
   align-items: center;
   justify-content: space-evenly;
   transition: all ease-in 0.3s;
+  text-align: center;
 }
 
 .detalle-producto h3 {
@@ -447,5 +455,11 @@ section h2::before {
   100% {
     opacity: 1;
     transform: translate(0);
+  }
+}
+
+@keyframes circular {
+  100% {
+     box-shadow: 0 0 0 52.8px #0000;
   }
 }
