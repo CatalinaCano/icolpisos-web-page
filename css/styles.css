@@ -172,6 +172,7 @@ nav ul li {
   transition: all ease-in 0.5s;
 }
 
+/* Comportamiento que se mostrara al pasar el cursor sobre el elemento */
 nav ul li:hover {
   background-color: var(--yellow);
   padding: 5px 7px;
@@ -193,16 +194,13 @@ nav ul li:hover {
   border-radius: 50%;
   display: flex;
   justify-content: center;
+
 }
 
 .btn-whatsapp img {
-  transition: all ease-in 0.5s;
-   object-fit: cover;
+  object-fit: cover;
 }
 
-.btn-whatsapp :hover img {
-  width: 70px;
-}
 
 /*Seccion presentacion*/
 #slider {
@@ -249,10 +247,9 @@ nav ul li:hover {
 
 /* Sección Quiénes Somos */
 #quienesSomos {
-  background: url("../assets/img/banner-quienes-somos.jpg") center center
-    no-repeat;
+  background: url("../assets/img/banner-quienes-somos.jpg") center center no-repeat;
   background-size: cover;
-  height: 50vh;
+  height:  fit-content;
   width: 100%;
 }
 
@@ -285,7 +282,7 @@ nav ul li:hover {
   line-height: 1.5;
 }
 
-/*Sección Promociones*/
+/*Estilos Generales a todos los titulos de las secciones dado que se quiere que siempre aparezca una linea por debajo del titulo*/
 section h2 {
   position: relative;
 }
@@ -302,9 +299,11 @@ section h2::before {
   transform: translateX(10%);
 }
 
+/*Sección Promociones*/
+
 .contenedor-promociones {
   margin-top: 4rem;
-  position: relative;
+  padding: 0 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -326,6 +325,7 @@ section h2::before {
   background-color: var(--dark-blue);
 }
 
+/*Tarjeta de Productos*/
 .tarjerta-producto {
   height: 50vh;
   background-color: var(--light-grey);
@@ -333,31 +333,31 @@ section h2::before {
   flex-basis: 20%;
   box-shadow: 5px 5px 7px var(--black);
   cursor: pointer;
+}
+
+.tarjerta-producto:nth-child(6){
   position: relative;
 }
 
-.producto-nuevo {
-  width: 150px;
-  height: 150px;
+ .tarjerta-producto:nth-child(6)::before{
+  content:url('../assets/img/new-icon.svg'); 
   position: absolute;
-  top: -100px;
-  right: 15%;
-  z-index: 3;
+  top: -20%;
+  right: -10%;
+  z-index: 300  ;
   transform: rotate(20deg);
   transition: all ease-in 1s;
-}
+} 
 
-.producto-nuevo:hover {
+ .tarjerta-producto:nth-child(6):hover::before{
   transform: rotate(360deg);
-}
+} 
 
 .img-producto {
   height: 70%;
   padding: 2rem;
   transition: all linear 0.5s;
-  
 }
-
 
 .img-producto :hover{
   transform: rotate(5deg);
@@ -379,18 +379,18 @@ section h2::before {
 
 .detalle-producto h3 {
   font-weight: lighter;
-  font-size: 20px;
+  font-size: clamp(1rem, 0.403vw + 0.871rem, 2rem);
 }
 
 .precio {
   font-weight: bold;
-  font-size: 32px;
+  font-size: clamp(2rem, 0.806vw + 1.742rem, 4rem);
 }
 
 .info-entrega {
   margin-top: 5rem;
   width: 100%;
-  padding: 30px 0;
+  padding: 30px;
   background-color: var(--soft-blue);
   display: flex;
   justify-content: space-evenly;
@@ -411,14 +411,14 @@ section h2::before {
 
 .trajeta-iconos p {
   color: var(--text-grey);
-  font-size: 20px;
+  font-size: clamp(1rem, 0.403vw + 0.871rem, 2rem);
   text-align: center;
   margin-top: 1rem;
 }
 
 .icono-info-entrega {
-  width: 100px;
-  height: 100px;
+  width: clamp(4rem, 2.419vw + 3.226rem, 10rem);
+  height: clamp(4rem, 2.419vw + 3.226rem, 10rem);
 }
 
 /*Animaciones*/
