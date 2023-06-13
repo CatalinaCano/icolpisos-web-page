@@ -22,6 +22,7 @@
   --blue: #2553a8;
   --black: rgba(0, 0, 0, 0.3);
   --soft-blue: #dbdfe8;
+  --blue-background:rgba(8, 17, 88,0.8);
 }
 
 /* Configuración de la caja de modelado para todos los elementos y sus pseudo-elementos para mantener una consistencia en la presentación */
@@ -121,7 +122,7 @@ nav ul,
 .barra-superior small,
 .nombre-marca,
 nav ul,
-.info-contacto,
+.informacion-servicio-contacto,
 .btn-whatsapp {
   animation: aparecer-derecha 1s ease-in;
 }
@@ -136,7 +137,7 @@ nav ul,
   max-width: 25px;
 }
 
-.info-contacto {
+.informacion-servicio-contacto {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -263,13 +264,13 @@ nav ul li:hover {
   padding: clamp(1rem, 2.581vw + 0.484rem, 5rem) 50px;
 }
 
-.info-descripcion {
+.informacion-servicio-descripcion {
   width: 90%;
   /* Se agrega la propiedad hypens para hacer que cuando el texto se desborde ponga un - y continue en la siguiente linea */
   hyphens: auto;
 }
 
-.info-descripcion h2 {
+.informacion-servicio-descripcion h2 {
   color: var(--white);
   text-transform: uppercase;
   font-size: clamp(2rem, 2.581vw + 1.484rem, 6rem);
@@ -277,7 +278,7 @@ nav ul li:hover {
   text-align: left;
 }
 
-.info-descripcion p {
+.informacion-servicio-descripcion p {
   font-size: clamp(0.75rem, 0.806vw + 0.589rem, 2rem);
   line-height: 1.5;
 }
@@ -343,7 +344,7 @@ section h2::before {
   position: absolute;
   top: -20%;
   right: -10%;
-  z-index: 300  ;
+  z-index: 1  ;
   transform: rotate(20deg);
   transition: all ease-in 1s;
 } 
@@ -428,7 +429,7 @@ section h2::before {
   }
 /*Informacion de Entrega*/
 
-.info-entrega {
+.informacion-servicio-entrega {
   margin-top: 5rem;
   width: 100%;
   padding: 30px;
@@ -457,14 +458,14 @@ section h2::before {
   margin-top: 1rem;
 }
 
-.icono-info-entrega {
+.icono-informacion-servicio-entrega {
   width: clamp(4rem, 2.419vw + 3.226rem, 10rem);
   height: clamp(4rem, 2.419vw + 3.226rem, 10rem);
 }
 
 
 
-.card {
+.tarjeta-servicios {
   border-radius: 16px;
   margin: 0 auto;
   width: 500px;
@@ -472,56 +473,49 @@ section h2::before {
   min-height: 500px;
   box-shadow:  5px 5px 7px var(--black);
   overflow: hidden;
-  background-image: url(https://source.unsplash.com/collection/905011/1000x1000);
+  
+}
+
+.tarjeta-servicios:nth-child(1){
+
+  background: url(../assets/img/servicio-3.jpg) center center;
   background-size: cover;
+
 }
 
 
-
-.info {
+.informacion-servicio {
   position: relative;
   width: 100%;
   height: 500px;
-  background-color: #fff;
+  color: var(--white);
+  background-color: var(--blue-background);
   transform: translateY(100%)
-    translateY(-90px);
+    translateY(-150px);
   transition: transform 0.5s ease-out;
+  white-space: pre-line;
+  overflow: auto;
+  
 }
 
-.info:before {
-  z-index: -1;
-  display: block;
-  position: absolute;
-  content: ' ';
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background-image: url(https://source.unsplash.com/collection/905011/1000x1000);
-  filter: blur(10px);
-  background-size: cover;
-  opacity: 0.25;
-  transform: translateY(-100%)
-    translateY(88px)
-    translateZ(0);
-  transition: transform 0.5s ease-out;
-}
 
-.card:hover .info,
-.card:hover .info:before {
+
+.tarjeta-servicios:hover .informacion-servicio {
   transform: translateY(0);
 }
 
-.title {
+.titulo-servicio {
   margin: 0;
-  padding: 24px;
+  text-transform: uppercase;
+  padding: 30px;
   font-size: 40px;
   line-height: 1;
-  color:var(--dark-grey)
+
 }
 
-.description {
+.descripcion_servicio {
   margin: 0;
-  padding: 0 24px 24px;
+  padding: 30px;
   font-size: 18px;
   line-height: 1.5;
 }
