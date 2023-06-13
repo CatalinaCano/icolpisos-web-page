@@ -301,7 +301,7 @@ section h2::before {
 
 /*Sección Promociones*/
 
-.contenedor-promociones {
+.contenedor-tarjetas {
   margin-top: 4rem;
   padding: 0 30px;
   display: flex;
@@ -352,17 +352,17 @@ section h2::before {
   transform: rotate(360deg);
 } 
 
-.img-producto {
+.img-tarjeta {
   height: 70%;
   padding: 2rem;
   transition: all linear 0.5s;
 }
 
-.img-producto :hover{
+.img-tarjeta :hover{
   transform: rotate(5deg);
 }
 
-.detalle-producto {
+.detalle-tarjeta {
   color: var(--white);
   background-color: var(--blue);
   padding: 30px;
@@ -376,7 +376,7 @@ section h2::before {
   text-align: center;
 }
 
-.detalle-producto h3 {
+.detalle-tarjeta h3 {
   font-weight: lighter;
   font-size: clamp(1rem, 0.403vw + 0.871rem, 2rem);
 }
@@ -411,19 +411,19 @@ section h2::before {
 }
 
 
-.detalle-producto:hover {
+.detalle-tarjeta:hover {
   background-color: var(--dark-blue);
   
 }
 
 
-  .detalle-producto:hover > .boton-tarjeta{
+  .detalle-tarjeta:hover > .boton-tarjeta{
     display: inline-block;
     transform: translateY(15%);
   }
 
-  .detalle-producto:hover > .detalle-producto h3,
-  .detalle-producto:hover > .precio{
+  .detalle-tarjeta:hover > .detalle-tarjeta h3,
+  .detalle-tarjeta:hover > .precio{
     display: none;
   }
 /*Informacion de Entrega*/
@@ -461,6 +461,76 @@ section h2::before {
   width: clamp(4rem, 2.419vw + 3.226rem, 10rem);
   height: clamp(4rem, 2.419vw + 3.226rem, 10rem);
 }
+
+
+
+.card {
+  border-radius: 16px;
+  margin: 0 auto;
+  width: 500px;
+  max-width: 100%;
+  min-height: 500px;
+  box-shadow:  5px 5px 7px var(--black);
+  overflow: hidden;
+  background-image: url(https://source.unsplash.com/collection/905011/1000x1000);
+  background-size: cover;
+}
+
+
+
+.info {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background-color: #fff;
+  transform: translateY(100%)
+    translateY(-90px);
+  transition: transform 0.5s ease-out;
+}
+
+.info:before {
+  z-index: -1;
+  display: block;
+  position: absolute;
+  content: ' ';
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-image: url(https://source.unsplash.com/collection/905011/1000x1000);
+  filter: blur(10px);
+  background-size: cover;
+  opacity: 0.25;
+  transform: translateY(-100%)
+    translateY(88px)
+    translateZ(0);
+  transition: transform 0.5s ease-out;
+}
+
+.card:hover .info,
+.card:hover .info:before {
+  transform: translateY(0);
+}
+
+.title {
+  margin: 0;
+  padding: 24px;
+  font-size: 40px;
+  line-height: 1;
+  color:var(--dark-grey)
+}
+
+.description {
+  margin: 0;
+  padding: 0 24px 24px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+
+
+
+
+
 
 /*Animaciones*/
 @keyframes subir {
