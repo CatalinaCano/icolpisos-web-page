@@ -95,6 +95,8 @@ html {
   font-family: Monserrat, system-ui, sans-serif;
   line-height: 1.15;
   scroll-behavior: smooth;
+  /*Se agrega esta propiedad para que cuando alguno de los elementos de texto se desborde pueda colocarse - y continuar el texto*/
+  hyphens: auto;
 }
 
 /*Estilos del Header*/
@@ -108,7 +110,6 @@ nav ul,
   color: var(--white);
   padding: 0 30px;
   text-transform: uppercase;
-  overflow: hidden;
   width: 100%;
 }
 
@@ -217,11 +218,13 @@ nav ul li:hover {
   text-transform: uppercase;
   text-align: center;
   width: 100%;
-  padding: 50px 0px;
+  padding: 20px 0px;
 }
 
 .presentacion h1,
 .presentacion h3 {
+  padding: 0;
+  margin: 0;
   font-weight: 600;
   animation: aparecer-izquierda 1s ease-in;
   color: var(--white);
