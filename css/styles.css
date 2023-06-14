@@ -541,14 +541,14 @@ section h2::before {
 
 /* Se crea el contenedor de las preguntas para que tenga dos columnas */
 .contenedor-preguntas{
-  margin-top: 5rem;
   display: grid;
-  align-items: center;
+  align-items: start;
   justify-content: space-evenly;
   gap: 5rem;
   grid-template-areas:  "columna-1 columna-2";
   grid-template-columns: repeat(50%);
   grid-template-rows: 1fr;
+  padding: 7rem;
 
 }
 
@@ -586,9 +586,17 @@ details{
   border-bottom: 1px dotted var(--grey);
 }
 
-details p{
-  margin: 2rem;
+details .respuesta{
+  white-space: pre-line;
+  text-align: justify;
   font-size: clamp(0.75rem, 0.702rem + 0.24vw, 1.125rem);
+  line-height: 1.2;
+}
+
+
+.bold{
+  color: var(--grey);
+  font-weight: 800;
 }
 
 /*Cambia el sentido de la flecha para indicar que se ha desplegado el texto de la pregunta*/
