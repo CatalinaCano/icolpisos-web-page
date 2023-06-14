@@ -23,7 +23,7 @@
   --black: rgba(0, 0, 0, 0.3);
   --soft-blue: #dbdfe8;
   --blue-background: rgba(8, 17, 88, 0.8);
-  --background-color-grey:#F8F8F8;
+  --background-color-grey: #f8f8f8;
 }
 
 /* Configuración de la caja de modelado para todos los elementos y sus pseudo-elementos para mantener una consistencia en la presentación */
@@ -51,7 +51,6 @@ a {
   color: white;
   text-decoration: none;
 }
-
 
 /* Estilo para hacer que las imagenes se adapten al tamaño de su contenedor*/
 img {
@@ -297,7 +296,7 @@ section h2::before {
 }
 
 /*Estilos para la felcha que indica que puedes subir en la pagina web*/
-.division{
+.division {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -305,13 +304,13 @@ section h2::before {
   height: 50px;
   font-size: 200px;
 }
-.flecha-arriba{
+.flecha-arriba {
   transform: rotate(-90deg);
   font-size: 10;
 }
 
 .flecha-arriba a {
-  color:var(--blue);
+  color: var(--blue);
 }
 
 /*Sección Promociones*/
@@ -432,6 +431,46 @@ section h2::before {
   display: none;
 }
 
+/* Slider de Marcas */
+.slider-marcas {
+  height: 100px;
+  margin-top: 3rem;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.slider-marcas::before,
+.slider-marcas::after {
+  content: "";
+  height: 100px;
+  position: absolute;
+  width: 100px;
+  z-index: 2;
+}
+.slider-marcas::after {
+  right: 0;
+  top: 0;
+}
+
+.slider-marcas::before {
+  left: 0;
+  top: 0;
+}
+.slider-marcas .contenedor-marcas {
+  animation: scroll 20s linear infinite;
+  display: flex;
+  width: calc(500px * 20);
+}
+
+.slider-marcas .marca {
+  height: 100px;
+  width: 350px;
+}
+
+.marca img {
+  width: 250px;
+}
+
 /*Informacion de Entrega*/
 .informacion-servicio-entrega {
   margin-top: 5rem;
@@ -467,6 +506,8 @@ section h2::before {
   height: clamp(4rem, 2.419vw + 3.226rem, 10rem);
 }
 
+/*Servicios*/
+
 .tarjeta-servicios {
   border-radius: 16px;
   margin: 0 auto;
@@ -482,18 +523,15 @@ section h2::before {
   background-size: cover;
 }
 
-
 .tarjeta-servicios:nth-child(2) {
   background: url(../assets/img/servicio-2.jpg) center center;
   background-size: cover;
 }
 
-
 .tarjeta-servicios:nth-child(3) {
   background: url(../assets/img/servicio-3.jpg) center center;
   background-size: cover;
 }
-
 
 .informacion-servicio {
   position: relative;
@@ -511,11 +549,10 @@ section h2::before {
 }
 
 .titulo-servicio,
-.descripcion_servicio{
+.descripcion_servicio {
   margin: 0;
   padding: 30px;
 }
-
 
 .titulo-servicio {
   text-transform: uppercase;
@@ -529,37 +566,33 @@ section h2::before {
   line-height: 1.5;
 }
 
-
-
 /*Secciond de preguntas y respuestas*/
 
-#faq{
+#faq {
   margin-bottom: 1rem;
-  padding: 5rem 3rem;
+  padding-top: 7rem;
   background-color: var(--background-color-grey);
 }
 
 /* Se crea el contenedor de las preguntas para que tenga dos columnas */
-.contenedor-preguntas{
+.contenedor-preguntas {
   display: grid;
   align-items: start;
   justify-content: space-evenly;
   gap: 5rem;
-  grid-template-areas:  "columna-1 columna-2";
+  grid-template-areas: "columna-1 columna-2";
   grid-template-columns: repeat(50%);
   grid-template-rows: 1fr;
   padding: 7rem;
-
 }
 
-.columna-1{
+.columna-1 {
   grid-area: columna-1;
 }
 
-.columna-2{
+.columna-2 {
   grid-area: columna-2;
 }
-
 
 summary {
   font-weight: bold;
@@ -569,32 +602,30 @@ summary {
   display: block;
 }
 
-
 summary::after {
-  margin-left:10px;
+  margin-left: 10px;
   display: inline-block;
   transition: 0.2s;
-  content: '\203A'; 
+  content: "\203A";
   color: var(--blue);
   font-size: 25px;
   transform: rotate(90deg);
 }
 
-details{
+details {
   margin-bottom: 2rem;
   font-size: clamp(0.875rem, 0.794rem + 0.4vw, 1.5rem);
   border-bottom: 1px dotted var(--grey);
 }
 
-details .respuesta{
+details .respuesta {
   white-space: pre-line;
   text-align: justify;
   font-size: clamp(0.75rem, 0.702rem + 0.24vw, 1.125rem);
   line-height: 1.2;
 }
 
-
-.bold{
+.bold {
   color: var(--grey);
   font-weight: 800;
 }
@@ -604,56 +635,103 @@ details[open] summary::after {
   transform: rotate(-90deg);
 }
 
+/*Seccion Contacto*/
+ #contacto{
+  height: 50vh;
+ }
 
-
-/* Animation */
-@keyframes scroll {
-	0% { transform: translateX(0); }
-  /*Calcula que tanto va  a ser el desplazamiento en el eje x*/
-	100% {  transform: translateX(calc(-170px * 7))}
+.info-contacto {
+  display: inline;
+  float: right;
+  background-color: var(--dark-blue);
+  height: 100%;
+  width: 50%;
 }
 
+.info {
+  display: inline;
+  float: left;
+  margin: 0;
+  background-color: var(--soft-blue);
+  color:var(--grey);
+  padding: 30px;
+  height: 100%;
+  width: 50%;
+}
 
-.slider-marcas {
-  height: 100px;
-  margin-top: 3rem;
-  overflow: hidden;
-  position: relative;
+form {
+  height: 80%;
+  width: 75%;
+  margin: 30px auto 0 auto;
+}
+form * {
   width: 100%;
+  display: inline-block;
+  margin: 10px 0 0 0;
+  outline: none;
+  border: none;
+  padding: 0;
+  color: var(--white);
 }
-.slider-marcas::before, .slider-marcas::after {
-  content: "";
-  height: 100px;
-  position: absolute;
-  width: 100px;
-  z-index: 2;
-}
-.slider-marcas::after {
-  right: 0;
-  top: 0;
-  /* transform: rotateZ(180deg); */
-}
-.slider-marcas::before {
-  left: 0;
-  top: 0;
-}
-.slider-marcas .contenedor-marcas{
-  animation: scroll 20s linear infinite;
-  display: flex;
-  width: calc(500px * 20);
+form input,
+form textarea {
+  border-radius: 10px;
+  border: none;
+  padding: 0;
+  padding-left: 1rem;
+  color: var(--dark-grey);
+  font-family: inherit;
+  font-weight: 500;
 }
 
-
-
-.slider-marcas .marca {
-  height: 100px;
-  width: 350px;
+form input {
+  height: 25px;
+}
+form textarea {
+  padding-top: 1rem;
 }
 
-.marca img{
-  width: 250px;
+form div label {
+  display: inline;
+  width: 45%;
+}
+form div .phone {
+  float: left;
+}
+form div .email {
+  float: right;
+}
+form .message {
+  height: 60px;
+}
+form .message {
+  line-height: 20px;
+  padding: 0;
 }
 
+.btn-formulario {
+  height: 30px;
+  border-radius: 30px;
+  width: 150px;
+  font-family: inherit;
+  background-color: var(--blue);
+  transition: all ease-in 0.3s;
+}
+
+.btn-formulario:hover {
+  background-color: var(--yellow);
+}
+
+.titulo-formulario {
+  font-weight: bolder;
+  font-size: 1.5rem;
+  color: var(--yellow);
+}
+
+.mapa{
+  width: 100%;
+  height: 50%;
+}
 
 /*Animaciones*/
 @keyframes subir {
@@ -695,5 +773,15 @@ details[open] summary::after {
 @keyframes circular {
   100% {
     box-shadow: 0 0 0 52.8px #0000;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  /*Calcula que tanto va  a ser el desplazamiento en el eje x*/
+  100% {
+    transform: translateX(calc(-170px * 7));
   }
 }
