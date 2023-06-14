@@ -604,6 +604,57 @@ details[open] summary::after {
   transform: rotate(-90deg);
 }
 
+
+
+/* Animation */
+@keyframes scroll {
+	0% { transform: translateX(0); }
+  /*Calcula que tanto va  a ser el desplazamiento en el eje x*/
+	100% {  transform: translateX(calc(-170px * 7))}
+}
+
+
+.slider-marcas {
+  height: 100px;
+  margin-top: 3rem;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.slider-marcas::before, .slider-marcas::after {
+  content: "";
+  height: 100px;
+  position: absolute;
+  width: 100px;
+  z-index: 2;
+}
+.slider-marcas::after {
+  right: 0;
+  top: 0;
+  /* transform: rotateZ(180deg); */
+}
+.slider-marcas::before {
+  left: 0;
+  top: 0;
+}
+.slider-marcas .contenedor-marcas{
+  animation: scroll 20s linear infinite;
+  display: flex;
+  width: calc(500px * 20);
+}
+
+
+
+.slider-marcas .marca {
+  height: 100px;
+  width: 350px;
+}
+
+.marca img{
+  width: 250px;
+}
+
+
 /*Animaciones*/
 @keyframes subir {
   0% {
