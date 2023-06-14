@@ -22,7 +22,7 @@
   --blue: #2553a8;
   --black: rgba(0, 0, 0, 0.3);
   --soft-blue: #dbdfe8;
-  --blue-background:rgba(8, 17, 88,0.8);
+  --blue-background: rgba(8, 17, 88, 0.8);
 }
 
 /* Configuración de la caja de modelado para todos los elementos y sus pseudo-elementos para mantener una consistencia en la presentación */
@@ -191,18 +191,16 @@ nav ul li:hover {
   /* Se usa la propiedad z-index para colocar el boton en la primera capa siempre*/
   z-index: 2;
   background: #4fce5d;
-  box-shadow: 0 0 0 0 rgba(79,206,93,0.5);
+  box-shadow: 0 0 0 0 rgba(79, 206, 93, 0.5);
   animation: circular 1s infinite;
   border-radius: 50%;
   display: flex;
   justify-content: center;
-
 }
 
 .btn-whatsapp img {
   object-fit: cover;
 }
-
 
 /*Seccion presentacion*/
 #slider {
@@ -232,7 +230,7 @@ nav ul li:hover {
 
 .presentacion h1 {
   font-size: clamp(2rem, 2.581vw + 1.484rem, 6rem);
-  line-height: 2;
+  line-height: 1.5;
 }
 .presentacion h3 {
   font-size: clamp(1rem, 0.871rem + 0.65vw, 2rem);
@@ -251,9 +249,10 @@ nav ul li:hover {
 
 /* Sección Quiénes Somos */
 #quienesSomos {
-  background: url("../assets/img/banner-quienes-somos.jpg") center center no-repeat;
+  background: url("../assets/img/banner-quienes-somos.jpg") center center
+    no-repeat;
   background-size: cover;
-  height:  fit-content;
+  height: fit-content;
   width: 100%;
 }
 
@@ -269,8 +268,6 @@ nav ul li:hover {
 
 .informacion-servicio-descripcion {
   width: 90%;
-  /* Se agrega la propiedad hypens para hacer que cuando el texto se desborde ponga un - y continue en la siguiente linea */
-  hyphens: auto;
 }
 
 .informacion-servicio-descripcion h2 {
@@ -338,31 +335,34 @@ section h2::before {
   cursor: pointer;
 }
 
-.tarjerta-producto:nth-child(6){
+/*Estilos necesarios para poder colocarle al ultimo elemento de los productos el sticker que indica que el producto es nuevo*/
+.tarjerta-producto:nth-child(6) {
   position: relative;
 }
-
- .tarjerta-producto:nth-child(6)::before{
-  content:url('../assets/img/new-icon.svg'); 
+/* Se agrega el sticker de que el producto es nuevo usando el posicionamiento absoluto*/
+.tarjerta-producto:nth-child(6)::before {
+  content: url("../assets/img/new-icon.svg");
   position: absolute;
   top: -20%;
   right: -10%;
-  z-index: 1  ;
+  z-index: 1;
   transform: rotate(20deg);
   transition: all ease-in 1s;
-} 
+}
 
- .tarjerta-producto:nth-child(6):hover::before{
+/*Trasnformacion asociada al sticker de producto nuevo*/
+.tarjerta-producto:nth-child(6):hover::before {
   transform: rotate(360deg);
-} 
+}
 
+/*Estilos asociados a la imagen del producto*/
 .img-tarjeta {
   height: 70%;
   padding: 2rem;
   transition: all linear 0.5s;
 }
 
-.img-tarjeta :hover{
+.img-tarjeta :hover {
   transform: rotate(5deg);
 }
 
@@ -388,23 +388,16 @@ section h2::before {
 .precio {
   font-weight: bold;
   font-size: clamp(2rem, 0.806vw + 1.742rem, 4rem);
-
 }
 
-
-.boton-tarjeta{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: column;
+.boton-tarjeta {
   background-color: var(--yellow);
-  color:var(--white);
+  color: var(--white);
   padding: 10px 15px;
   margin: 10px;
   font-size: clamp(1rem, 0.403vw + 0.871rem, 2rem);
   border: none;
-  text-transform: uppercase;
-  border-radius: 30px;
+  border-radius: 50%;
   display: none;
   transition: all ease-in 0.3s;
 }
@@ -414,22 +407,18 @@ section h2::before {
   outline-offset: -5px;
 }
 
-
 .detalle-tarjeta:hover {
   background-color: var(--dark-blue);
-  
 }
 
+.detalle-tarjeta:hover > .boton-tarjeta {
+  display: inline-block;
+  transform: translateY(15%);
+}
 
-  .detalle-tarjeta:hover > .boton-tarjeta{
-    display: inline-block;
-    transform: translateY(15%);
-  }
-
-  .detalle-tarjeta:hover > .detalle-tarjeta h3,
-  .detalle-tarjeta:hover > .precio{
-    display: none;
-  }
+.detalle-tarjeta:hover > .precio {
+  display: none;
+}
 /*Informacion de Entrega*/
 
 .informacion-servicio-entrega {
@@ -466,26 +455,20 @@ section h2::before {
   height: clamp(4rem, 2.419vw + 3.226rem, 10rem);
 }
 
-
-
 .tarjeta-servicios {
   border-radius: 16px;
   margin: 0 auto;
   width: 500px;
   max-width: 100%;
   min-height: 500px;
-  box-shadow:  5px 5px 7px var(--black);
+  box-shadow: 5px 5px 7px var(--black);
   overflow: hidden;
-  
 }
 
-.tarjeta-servicios:nth-child(1){
-
+.tarjeta-servicios:nth-child(1) {
   background: url(../assets/img/servicio-3.jpg) center center;
   background-size: cover;
-
 }
-
 
 .informacion-servicio {
   position: relative;
@@ -493,15 +476,11 @@ section h2::before {
   height: 500px;
   color: var(--white);
   background-color: var(--blue-background);
-  transform: translateY(100%)
-    translateY(-150px);
+  transform: translateY(100%) translateY(-150px);
   transition: transform 0.5s ease-out;
   white-space: pre-line;
   overflow: auto;
-  
 }
-
-
 
 .tarjeta-servicios:hover .informacion-servicio {
   transform: translateY(0);
@@ -513,7 +492,6 @@ section h2::before {
   padding: 30px;
   font-size: 40px;
   line-height: 1;
-
 }
 
 .descripcion_servicio {
@@ -522,12 +500,6 @@ section h2::before {
   font-size: 18px;
   line-height: 1.5;
 }
-
-
-
-
-
-
 
 /*Animaciones*/
 @keyframes subir {
@@ -568,6 +540,6 @@ section h2::before {
 
 @keyframes circular {
   100% {
-     box-shadow: 0 0 0 52.8px #0000;
+    box-shadow: 0 0 0 52.8px #0000;
   }
 }
