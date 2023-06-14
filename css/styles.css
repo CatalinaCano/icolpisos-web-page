@@ -52,10 +52,6 @@ a {
   text-decoration: none;
 }
 
-/*Estilos generales que aplican a las secciones*/
-section {
-  margin-bottom: 7rem;
-}
 
 /* Estilo para hacer que las imagenes se adapten al tamaño de su contenedor*/
 img {
@@ -174,7 +170,7 @@ nav ul li {
   transition: all ease-in 0.5s;
 }
 
-/* Comportamiento que se mostrara al pasar el cursor sobre el elemento */
+/* Comportamiento que se mostrará al pasar el cursor sobre el elemento */
 nav ul li:hover {
   background-color: var(--yellow);
   padding: 5px 7px;
@@ -298,6 +294,24 @@ section h2::before {
   bottom: -10px;
   border-radius: 30px;
   transform: translateX(10%);
+}
+
+/*Estilos para la felcha que indica que puedes subir en la pagina web*/
+.division{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5rem 3rem;
+  height: 50px;
+  font-size: 200px;
+}
+.flecha-arriba{
+  transform: rotate(-90deg);
+  font-size: 10;
+}
+
+.flecha-arriba a {
+  color:var(--blue);
 }
 
 /*Sección Promociones*/
@@ -489,7 +503,7 @@ section h2::before {
   background-color: var(--blue-background);
   transform: translateY(100%) translateY(-120px);
   transition: transform 0.5s ease-out;
-  white-space: pre-line;
+  text-align: justify;
 }
 
 .tarjeta-servicios:hover .informacion-servicio {
