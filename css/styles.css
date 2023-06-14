@@ -23,6 +23,7 @@
   --black: rgba(0, 0, 0, 0.3);
   --soft-blue: #dbdfe8;
   --blue-background: rgba(8, 17, 88, 0.8);
+  --background-color-grey:#F8F8F8;
 }
 
 /* Configuración de la caja de modelado para todos los elementos y sus pseudo-elementos para mantener una consistencia en la presentación */
@@ -512,6 +513,73 @@ section h2::before {
 .descripcion_servicio {
   font-size: clamp(0.75rem, 0.702rem + 0.24vw, 1.125rem);
   line-height: 1.5;
+}
+
+
+
+/*Secciond de preguntas y respuestas*/
+
+#faq{
+  margin-bottom: 1rem;
+  padding: 5rem 3rem;
+  background-color: var(--background-color-grey);
+}
+
+/* Se crea el contenedor de las preguntas para que tenga dos columnas */
+.contenedor-preguntas{
+  margin-top: 5rem;
+  display: grid;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 5rem;
+  grid-template-areas:  "columna-1 columna-2";
+  grid-template-columns: repeat(50%);
+  grid-template-rows: 1fr;
+
+}
+
+.columna-1{
+  grid-area: columna-1;
+}
+
+.columna-2{
+  grid-area: columna-2;
+}
+
+
+summary {
+  font-weight: bold;
+  color: var(--grey);
+  margin: -0.5em -0.5em 0;
+  padding: 0.5em;
+  display: block;
+}
+
+
+summary::after {
+  margin-left:10px;
+  display: inline-block;
+  transition: 0.2s;
+  content: '\203A'; 
+  color: var(--blue);
+  font-size: 25px;
+  transform: rotate(90deg);
+}
+
+details{
+  margin-bottom: 2rem;
+  font-size: clamp(0.875rem, 0.794rem + 0.4vw, 1.5rem);
+  border-bottom: 1px dotted var(--grey);
+}
+
+details p{
+  margin: 2rem;
+  font-size: clamp(0.75rem, 0.702rem + 0.24vw, 1.125rem);
+}
+
+/*Cambia el sentido de la flecha para indicar que se ha desplegado el texto de la pregunta*/
+details[open] summary::after {
+  transform: rotate(-90deg);
 }
 
 /*Animaciones*/
