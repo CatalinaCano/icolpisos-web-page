@@ -246,10 +246,6 @@
         </div>
       </div>
       </div>
-
-
-
-
     </section>
     <!-- Subseccion de promociones respecto a los beneficionos de los productos -->
     <section class="informacion-servicio-entrega">
@@ -438,19 +434,16 @@
 
     <!-- Secccion de Contacto -->
     <section id="contacto">
-
-      <div class="info-contacto">
-
+      <!-- Sección donde se capturan los datos del cliente -->
+      <div class="info-contacto-cliente">
         <form action="#" method="get">
           <label class="titulo-formulario" for="">Envíanos un Mensaje</label>
-         
           <label for="nombreCompleto">Nombre y apellido*</label>
           <input type="text" name="nombreCompleto" id="nombreCompleto" required placeholder="Nombre Completo">
           <div class="informacion-cliente" >
             <label for="correo" class="email"> Correo Electrónico*  <input type="email" name="email" id="email" required placeholder="correo@usuario.com"> </label>
-            <label for="telefono" class="phone">Número de Teléfono*  <input type="tel" name="telefono" id="telefono" required placeholder="3111231212"> </label>
+            <label for="telefono" class="phone">Número de Celular*  <input type="tel" name="telefono" id="telefono" required placeholder="3111231212" pattern="^(3)[0-9]{9}$"> </label>
           </div>
-          
           <label for="mensaje">Mensaje*</label>
           <textarea name="mensaje" id="mensaje" rows="4" required placeholder="Escribe aquí tu mensaje"></textarea>
           <button class="btn-formulario" type="submit">Enviar Mensaje</button>
@@ -458,31 +451,28 @@
          <small>Los campos marcados con  * son obligatorios</small>
         </form>
       </div>
-
-      <div class="info">
+      <!-- Sección de información de contacto de la empresa  -->
+      <div class="info-localizacion">
         <connect>
           <h3> Queremos escucharte </h3>
           <br>
-          <p> Tu voz es importante para nosotros, ya que nos ayuda a mejorar nuestros productos y servicios. Al dejarnos un mensaje en nuestra página web, estarás contribuyendo a construir una comunidad donde cada opinión cuenta.
-          </p>
+          <p> Tu voz es importante para nosotros, ya que nos ayuda a mejorar nuestros productos y servicios. Al dejarnos un mensaje en nuestra página web, estarás contribuyendo a construir una comunidad donde cada opinión cuenta.</p>
           <br>
         </connect>
         <contact>
-          <div> icolpisosdela33@hotmail.com</div>
-          <div> <span class="bold">Tel :</span>(+57) 312-351-24-61 </div>
+          <div > <a href="mailto:icolpisosdela33@hotmail.com?Subject=Solicitud">  <span class="bold">icolpisosdela33@hotmail.com </span></a> </div>
+          <div>  <a href="tel:+573123512461"> <span class="bold">  (+57) 312-351-24-61</span> </a>  </div>
           <div> Calle 26 Sur #78 L 15 Sur - Bogotá, Kennedy - Colombia  </div>
         </contact>
         <br>
         <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.81082527668!2d-74.15326062424995!3d4.627814742283517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9e9e3268d009%3A0x66ae84f03ac31732!2sICOLPISOS%20FERRETERIA!5e0!3m2!1sen!2ses!4v1686782575099!5m2!1sen!2ses" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
-
-
     </section>
-
-
-    <section>
-
-    </section>
+    <!-- Footer -->
+    <footer>
+      
+    </footer>
+    
   </main>
 </body>
 
