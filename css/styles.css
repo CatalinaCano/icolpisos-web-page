@@ -171,6 +171,7 @@ nav ul li {
 
 /* Comportamiento que se mostrará al pasar el cursor sobre el elemento */
 nav ul li:hover,
+a:active,
 .seleccionado {
   background-color: var(--yellow);
   padding: 5px 7px;
@@ -802,8 +803,8 @@ footer ul li a:hover{
 
 #tienda{
   padding: 5rem;
-  
 }
+
 
 .contenedor-tienda{
   display: grid;
