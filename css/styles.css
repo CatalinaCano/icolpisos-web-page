@@ -116,18 +116,10 @@ nav ul,
   margin: 0;
 }
 
-.barra-superior small,
-.nombre-marca,
-nav ul,
-.informacion-servicio-contacto,
-.btn-whatsapp {
-  animation: aparecer-derecha 1s ease-in;
-}
 
 .iconos {
   display: inline-flex;
   gap: 10px;
-  animation: aparecer-izquierda 1s ease-in;
 }
 
 .caja-icono {
@@ -221,7 +213,6 @@ a:active,
   padding: 0;
   margin: 0;
   font-weight: 600;
-  animation: aparecer-izquierda 1s ease-in;
   color: var(--white);
 }
 
@@ -241,7 +232,6 @@ a:active,
 .img-logo-container {
   height: 50vh;
   padding: 30px;
-  animation: subir 1s ease-in;
 }
 
 /* Sección Quiénes Somos */
@@ -834,6 +824,22 @@ aside{
   height: 300px;
   background-color: #f2c43e;
 }
+
+/*Clases para poder animar desde JS*/
+
+.aparecer-derecha{
+  animation: aparecer-derecha 1s ease-in;
+}
+
+.aparecer-izquierda{
+  animation: aparecer-izquierda 1s ease-in;
+}
+
+.subir{
+  animation: subir 1s ease-in;
+}
+
+
 /*Animaciones*/
 @keyframes subir {
   0% {
