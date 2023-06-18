@@ -932,7 +932,12 @@ footer ul li a:hover {
   }
 
   .informacion-servicio-descripcion h2 {
-    font-size: 27px;
+    font-size: 20px;
+  }
+
+  .contenedor-preguntas{
+    
+    padding: 2rem;
   }
 
   .flecha {
@@ -964,6 +969,21 @@ footer ul li a:hover {
 
   #contacto,
   .info-localizacion {
+    flex-direction: column;
+  }
+
+  .tarjerta-producto:nth-child(6)::before {
+   transform: scale(.6);
+  }
+  nav{
+    gap:1rem;
+  }
+.nombre-marca{
+  text-align: center;
+  flex-basis: 100%;
+}
+  nav ul {
+    gap:0.5rem;
     flex-direction: column;
   }
 }
