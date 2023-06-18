@@ -870,9 +870,7 @@ footer ul li a:hover {
 
 /*Media Query*/
 @media (min-width: 768px) and (max-width: 1440px) {
-  #slider {
-    background-size: cover;
-  }
+
 
   h2 {
     font-size: 40px;
@@ -929,9 +927,6 @@ footer ul li a:hover {
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
-  #slider {
-    background-size: contain;
-  }
 
   #barra-superior {
     flex-wrap: wrap;
