@@ -902,6 +902,9 @@ footer ul li a:hover {
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
+  #slider {
+    background-size: cover;
+  }
   #barra-superior {
     flex-wrap: wrap;
   }
