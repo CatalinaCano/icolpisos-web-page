@@ -37,25 +37,29 @@ function animarNavbar() {
 window.addEventListener("load", function () {
   const preloader = document.querySelector(".preloader");
   preloader.classList.add("ocultar");
-});
-
-
-//Hacer que se animen los elementos en cuanto apareza la pagina web
-window.addEventListener("DOMContentLoaded", function () {
   animarLogoBienvenida();
   animarPresentacion();
   animarBarraSuperior();
   animarNavbar();
 });
 
-// Evento asociado al scroll
-window.addEventListener("scroll", function () {
-  const $quienesSomos = this.document.querySelector(
-    ".informacion-servicio-descripcion"
-  );
-  let posicionSeccion = $quienesSomos.getBoundingClientRect().top;
-  var alturaPantalla = window.innerHeight;
-  if (posicionSeccion < alturaPantalla) {
-    $quienesSomos.classList.add("aparecer-izquierda");
+
+
+
+function mostrarSecciones() {
+  const $secciones = document.getElementsByClassName('animar-entrada');
+
+  
+  for (let i = 0; i < $secciones.length; i++) {
+    let $secccion = $secciones[i];
+    let alturaSeccion = $secccion.getBoundingClientRect().top;
+    let anchoVentana = window.innerHeight;
+    if (alturaSeccion - anchoVentana <= 0) {
+      //Se aplica un operador ternario para hacer que las secciones que están en las posiciones pares aperzcan por la izquierda y las impares por la derecha.
+      i%2 == 0 ?  $secccion.classList.add("aparecer-izquierda"): $secccion.classList.add("aparecer-derecha");
+    }
   }
-});
+}
+
+
+window.addEventListener('scroll', mostrarSecciones);
