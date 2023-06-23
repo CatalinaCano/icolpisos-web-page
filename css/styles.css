@@ -24,6 +24,8 @@
   --soft-blue: #dbdfe8;
   --blue-background: rgba(8, 17, 88, 0.8);
   --background-color-grey: #f8f8f8;
+  --dark-transparent--green :rgba(79, 206, 93, 0.5);
+  --green: #4fce5d;
 }
 
 /* Configuración de la caja de modelado para todos los elementos y sus pseudo-elementos para mantener una consistencia en la presentación */
@@ -216,8 +218,8 @@ a:active,
   cursor: pointer;
   /* Se usa la propiedad z-index para colocar el boton en la primera capa siempre*/
   z-index: 2;
-  background: #4fce5d;
-  box-shadow: 0 0 0 0 rgba(79, 206, 93, 0.5);
+  background:var(--green);
+  box-shadow: 0 0 0 0 var(--dark-transparent--green);
   animation: circular 1s infinite;
   border-radius: 50%;
   display: flex;
@@ -232,9 +234,9 @@ a:active,
 
 /*Estilos asociados a la seccion*/
 #slider {
-  background: url("../assets/img/banner-1.jpg") no-repeat;
+  background: url("../assets/img/banner-1.jpg") no-repeat ;
   height: 40vh;
-  background-size: contain;
+  background-size: cover;
   background-attachment: fixed;
   padding: 0;
   margin: 0;
@@ -908,8 +910,10 @@ footer ul li a:hover {
 
 /*Media Query*/
 @media (min-width: 768px) and (max-width: 1440px) {
+  
+  
   #slider {
-    background-size: cover;
+    background-size: contain;
   }
 
   h2 {
@@ -933,6 +937,11 @@ footer ul li a:hover {
     height: 40vh;
   }
 
+  .informacion-servicio {
+
+    transform: translateY(100%) translateY(-90px);
+
+  }
   .info-localizacion {
     flex-direction: column;
     height: fit-content;
@@ -976,10 +985,9 @@ footer ul li a:hover {
 
 @media (min-width: 320px) and (max-width: 767px) {
 
-
-    #slider {
-      background-size: contain;
-    }
+   #slider{
+    background-position: center;
+   }
 
     #inicio {
       height: 10vh;
