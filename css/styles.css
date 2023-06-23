@@ -232,7 +232,7 @@ a:active,
 
 /*Estilos asociados a la seccion*/
 #slider {
-  background: url("../assets/img/banner-1.jpg") no-repeat center center;
+  background: url("../assets/img/banner-1.jpg") no-repeat;
   height: 40vh;
   background-size: cover;
   background-attachment: fixed;
