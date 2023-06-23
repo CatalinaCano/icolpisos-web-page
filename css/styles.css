@@ -95,6 +95,7 @@ html {
   scroll-behavior: smooth;
   /*Se agrega esta propiedad para que cuando alguno de los elementos de texto se desborde pueda colocarse - y continuar el texto*/
   hyphens: auto;
+  background-color: var(--white);
 }
 
 /*Estilos asociados al preloader*/
