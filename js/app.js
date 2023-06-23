@@ -33,6 +33,13 @@ function animarNavbar() {
   }
 }
 
+//Funcion que se ejecuta mientras se carga la pagina 
+window.addEventListener("load", function () {
+  const preloader = document.querySelector(".preloader");
+  preloader.classList.add("ocultar");
+});
+
+
 //Hacer que se animen los elementos en cuanto apareza la pagina web
 window.addEventListener("DOMContentLoaded", function () {
   animarLogoBienvenida();

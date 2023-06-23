@@ -95,6 +95,39 @@ html {
   hyphens: auto;
 }
 
+/*Estilos asociados al preloader*/
+.preloader {
+	position: fixed;
+  inset: 0; /*Shortcut para llamar las propiedades top, left, right y button*/
+	z-index: 9999;
+	background: var(--blue-background);
+  display: flex;
+  flex-direction: column;
+  gap:2rem;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+}
+
+.circulo-preloader{
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  border:16px solid;
+  border-color:white;
+
+  border-right-color: var(--blue);
+  z-index: 1;
+  animation:rotar 1s infinite linear;
+}
+
+
+/*Clase Generica para poder ocultar elementos atraves de JS*/
+.ocultar{
+  display: none;
+}
+
+
 /*Estilos del Header*/
 .barra-superior,
 nav,
@@ -116,15 +149,18 @@ nav ul,
   margin: 0;
 }
 
+/*Contenedor de los iconos de redes sociales*/
 .iconos {
   display: inline-flex;
   gap: 10px;
 }
 
+/*Clase reutilizable para todos los iconos utilizados en la web*/
 .caja-icono {
   max-width: 25px;
 }
 
+/*Clase asociada a la informacion de contacto*/
 .informacion-servicio-contacto {
   display: inline-flex;
   align-items: center;
@@ -133,7 +169,9 @@ nav ul,
 }
 
 .nombre-marca {
-  /*A lo largo de toda la hoja de estilos se usa la funcion clamp para obtener un texto fluido*/
+  /*A lo largo de toda la hoja de estilos se usa la funcion clamp para obtener un tamaño fluido
+    Para calcular los tamaños fue utilizada la herramienta  https://geary.co/clamp-calculator/ 
+  */
   font-size: clamp(0.75rem, 0.806vw + 0.589rem, 2rem);
   white-space: nowrap;
 }
@@ -144,19 +182,19 @@ nav {
   padding: 10px 30px;
 }
 
+/*Lista del Menú de navegacion*/
 nav ul {
   list-style: none;
   padding: 0;
   justify-content: flex-end;
   gap: 30px;
 }
-
+/*Enlaces del Menú de Navegacion*/
 nav ul li>a {
   text-decoration: none;
   color: var(--white);
   font-size: clamp(0.75rem, 0.323vw + 0.685rem, 1.25rem);
 }
-
 nav ul li {
   transition: all ease-in 0.5s;
 }
@@ -192,15 +230,18 @@ a:active,
 }
 
 /*Seccion presentacion*/
+
+/*Estilos asociados a la seccion*/
 #slider {
-  height: 40vh;
   background: url("../assets/img/banner-1.jpg") no-repeat center center;
+  height: 40vh;
   background-size: cover;
   background-attachment: fixed;
   padding: 0;
   margin: 0;
 }
 
+/*Estilos asociados al banner de texto que va sobre la foto*/
 .presentacion {
   background-color: rgba(0, 0, 0, 0.5);
   text-transform: uppercase;
@@ -208,7 +249,6 @@ a:active,
   width: 100%;
   padding: 20px 0px;
 }
-
 .presentacion h1,
 .presentacion h3 {
   padding: 0;
@@ -216,12 +256,10 @@ a:active,
   font-weight: 600;
   color: var(--white);
 }
-
 .presentacion h1 {
   font-size: clamp(2rem, 2.581vw + 1.484rem, 6rem);
   line-height: 1.5;
 }
-
 .presentacion h3 {
   font-size: clamp(1rem, 0.871rem + 0.65vw, 2rem);
 }
@@ -230,7 +268,6 @@ a:active,
 #logo {
   margin-bottom: 2rem;
 }
-
 .img-logo-container {
   height: 50vh;
   padding: 30px;
@@ -288,7 +325,7 @@ section h2::before {
   transform: translateX(10%);
 }
 
-/*Estilos para la felcha que indica que puedes subir en la pagina web*/
+/*Estilos para la seccion que contiene una flecha que indica que puedes subir en la pagina web*/
 .division {
   display: flex;
   align-items: center;
@@ -297,12 +334,10 @@ section h2::before {
   height: 50px;
   font-size: 200px;
 }
-
 .flecha-arriba {
   transform: rotate(-90deg);
   font-size: 10;
 }
-
 .flecha-arriba a {
   color: var(--blue);
 }
@@ -313,7 +348,7 @@ section h2::before {
   padding: 0 30px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   gap: 2rem;
 }
 
@@ -368,11 +403,11 @@ section h2::before {
   padding: 2rem;
   transition: all linear 0.5s;
 }
-
 .img-tarjeta :hover {
   transform: rotate(5deg);
 }
 
+/*Estilos asociados al detalle de la tarjeta*/
 .detalle-tarjeta {
   color: var(--white);
   background-color: var(--blue);
@@ -386,17 +421,14 @@ section h2::before {
   transition: all ease-in 0.3s;
   text-align: center;
 }
-
 .detalle-tarjeta h3 {
   font-weight: lighter;
   font-size: clamp(1rem, 0.403vw + 0.871rem, 2rem);
 }
-
 .precio {
   font-weight: bold;
   font-size: clamp(2rem, 0.806vw + 1.742rem, 4rem);
 }
-
 .boton-tarjeta {
   background-color: var(--yellow);
   color: var(--white);
@@ -419,7 +451,7 @@ section h2::before {
 }
 
 .detalle-tarjeta:hover>.boton-tarjeta {
-  display: inline-block;
+  display: block;
 }
 
 .detalle-tarjeta:hover>.precio {
@@ -505,7 +537,6 @@ section h2::before {
 }
 
 /*Servicios*/
-
 .tarjeta-servicios {
   border-radius: 16px;
   margin: 0 auto;
@@ -517,17 +548,17 @@ section h2::before {
 }
 
 .tarjeta-servicios:nth-child(1) {
-  background: url(../assets/img/servicio-1.jpg) center center;
+  background: url('../assets/img/servicio-1.jpg') center center;
   background-size: cover;
 }
 
 .tarjeta-servicios:nth-child(2) {
-  background: url(../assets/img/servicio-2.jpg) center center;
+  background: url('../assets/img/servicio-2.jpg') center center;
   background-size: cover;
 }
 
 .tarjeta-servicios:nth-child(3) {
-  background: url(../assets/img/servicio-3.jpg) center center;
+  background: url('../assets/img/servicio-3.jpg') center center;
   background-size: cover;
 }
 
@@ -867,10 +898,13 @@ footer ul li a:hover {
     transform: translateX(calc(-170px * 7));
   }
 }
+@keyframes rotar {to{transform: rotate(1turn)}}
 
 /*Media Query*/
 @media (min-width: 768px) and (max-width: 1440px) {
-
+  #slider {
+    background-size: cover;
+  }
 
   h2 {
     font-size: 40px;
@@ -879,10 +913,18 @@ footer ul li a:hover {
   .contenedor-tarjetas {
     flex-wrap: wrap;
     gap: 3rem;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  
+  .flecha {
+    display: none;
   }
 
   .tarjerta-producto {
-    width: 100vw;
+    width: 70vw;
+    height: 40vh;
   }
 
   .info-localizacion {
@@ -928,8 +970,20 @@ footer ul li a:hover {
 
 @media (min-width: 320px) and (max-width: 767px) {
 
-  #barra-superior {
-    flex-wrap: wrap;
+
+    #slider {
+      background-size: contain;
+    }
+
+    #inicio {
+      height: 10vh;
+    }
+
+  .barra-superior {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
   }
 
   small {
@@ -951,6 +1005,9 @@ footer ul li a:hover {
   .descripcion {
     padding: 20px;
   }
+  .info-enlaces{
+    text-align: center;
+  }
 
   .informacion-servicio-descripcion h2 {
     font-size: 20px;
@@ -962,10 +1019,12 @@ footer ul li a:hover {
 
   .contenedor-tarjetas {
     flex-wrap: wrap;
+    align-items: start;
   }
 
   .tarjerta-producto{
-    min-width: 70vw;
+    min-width: 50vw;
+    min-height: fit-content;
   }
 
 
