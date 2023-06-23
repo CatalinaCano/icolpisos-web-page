@@ -24,7 +24,7 @@
   --soft-blue: #dbdfe8;
   --blue-background: rgba(8, 17, 88, 0.8);
   --background-color-grey: #f8f8f8;
-  --dark-transparent--green :rgba(79, 206, 93, 0.5);
+  --dark-transparent--green: rgba(79, 206, 93, 0.5);
   --green: #4fce5d;
 }
 
@@ -99,35 +99,33 @@ html {
 
 /*Estilos asociados al preloader*/
 .preloader {
-	position: fixed;
+  position: fixed;
   inset: 0; /*Shortcut para llamar las propiedades top, left, right y button*/
-	z-index: 3;
-	background: var(--dark-blue);
+  z-index: 3;
+  background: var(--dark-blue);
   display: flex;
   flex-direction: column;
-  gap:2rem;
+  gap: 2rem;
   justify-content: center;
   align-items: center;
   color: var(--white);
 }
 
-.circulo-preloader{
-  width:100px;
-  height:100px;
-  border-radius:50%;
-  border:16px solid;
-  border-color:var(--white);
+.circulo-preloader {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 16px solid;
+  border-color: var(--white);
   border-right-color: var(--blue);
   z-index: 1;
-  animation:rotar 1s infinite linear;
+  animation: rotar 1s infinite linear;
 }
-
 
 /*Clase Generica para poder ocultar elementos atraves de JS*/
-.ocultar{
+.ocultar {
   display: none;
 }
-
 
 /*Estilos del Header*/
 .barra-superior,
@@ -191,15 +189,26 @@ nav ul {
   gap: 30px;
 }
 /*Enlaces del Menú de Navegacion*/
-nav ul li>a {
+nav ul li > a {
   text-decoration: none;
   color: var(--white);
-  font-size: clamp(0.75rem, 0.323vw + 0.685rem, 1.25rem);
+  font-size: clamp(0.1rem, 0.323vw + 0.685rem, 1.25rem);
 }
 nav ul li {
   transition: all ease-in 0.5s;
 }
 
+ul.topnav li#menu-responsive {
+  display: none;
+  color: #fff;
+}
+ul.topnav li#menu-responsive {
+  cursor: pointer;
+}
+
+ul.topnav li#menu-responsive:hover {
+  background-color: transparent;
+}
 /* Comportamiento que se mostrará al pasar el cursor sobre el elemento */
 nav ul li:hover,
 a:active,
@@ -218,7 +227,7 @@ a:active,
   cursor: pointer;
   /* Se usa la propiedad z-index para colocar el boton en la primera capa siempre*/
   z-index: 2;
-  background:var(--green);
+  background: var(--green);
   box-shadow: 0 0 0 0 var(--dark-transparent--green);
   animation: circular 1s infinite;
   border-radius: 50%;
@@ -234,7 +243,7 @@ a:active,
 
 /*Estilos asociados a la seccion*/
 #slider {
-  background: url("../assets/img/banner-1.jpg") no-repeat ;
+  background: url("../assets/img/banner-1.jpg") no-repeat;
   height: 40vh;
   background-size: cover;
   background-attachment: fixed;
@@ -276,7 +285,8 @@ a:active,
 
 /* Sección Quiénes Somos */
 #quienesSomos {
-  background: url("../assets/img/banner-quienes-somos.jpg") center center no-repeat;
+  background: url("../assets/img/banner-quienes-somos.jpg") center center
+    no-repeat;
   background-size: cover;
   height: fit-content;
   width: 100%;
@@ -451,11 +461,11 @@ section h2::before {
   background-color: var(--dark-blue);
 }
 
-.detalle-tarjeta:hover>.boton-tarjeta {
+.detalle-tarjeta:hover > .boton-tarjeta {
   display: block;
 }
 
-.detalle-tarjeta:hover>.precio {
+.detalle-tarjeta:hover > .precio {
   display: none;
 }
 
@@ -549,17 +559,17 @@ section h2::before {
 }
 
 .tarjeta-servicios:nth-child(1) {
-  background: url('../assets/img/servicio-1.jpg') center center;
+  background: url("../assets/img/servicio-1.jpg") center center;
   background-size: cover;
 }
 
 .tarjeta-servicios:nth-child(2) {
-  background: url('../assets/img/servicio-2.jpg') center center;
+  background: url("../assets/img/servicio-2.jpg") center center;
   background-size: cover;
 }
 
 .tarjeta-servicios:nth-child(3) {
-  background: url('../assets/img/servicio-3.jpg') center center;
+  background: url("../assets/img/servicio-3.jpg") center center;
   background-size: cover;
 }
 
@@ -850,8 +860,8 @@ footer ul li a:hover {
 
 /*Animacion utilizada para el preloader*/
 @keyframes rotar {
-  to{
-    transform: rotate(1turn)
+  to {
+    transform: rotate(1turn);
   }
 }
 
@@ -910,8 +920,6 @@ footer ul li a:hover {
 
 /*Media Query*/
 @media (min-width: 768px) and (max-width: 1440px) {
-  
-  
   #slider {
     background-size: contain;
   }
@@ -927,7 +935,6 @@ footer ul li a:hover {
     align-items: center;
   }
 
-  
   .flecha {
     display: none;
   }
@@ -938,9 +945,7 @@ footer ul li a:hover {
   }
 
   .informacion-servicio {
-
     transform: translateY(100%) translateY(-90px);
-
   }
   .info-localizacion {
     flex-direction: column;
@@ -984,14 +989,57 @@ footer ul li a:hover {
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
+  
+ #nav-bar{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ }
+ #lista-nav > li > a{
+  font-size: 14px;
+ }
+ 
+  ul.topnav li {
+    display: none;
+  }
 
-   #slider{
+  ul.topnav li#menu-responsive {
+    display: inline-block;
+    padding-left: 90%;
+  }
+
+  #nav-bar {
+    position: relative;
+  }
+
+  #menu-responsive {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding-right: 5%;
+    padding-top: 2%;
+  }
+
+  ul.topnav.responsive li {
+    float: none;
+    display: inline;
+  }
+
+  ul.topnav.responsive li a {
+    display: block;
+    text-align: center;
+  }
+  .columna {
+    flex-direction: column;
+  }
+
+  #slider {
     background-position: center;
-   }
+  }
 
-    #inicio {
-      height: 10vh;
-    }
+  #inicio {
+    height: 10vh;
+  }
 
   .barra-superior {
     flex-direction: column;
@@ -1002,10 +1050,6 @@ footer ul li a:hover {
 
   small {
     font-size: 10px;
-  }
-
-  nav {
-    flex-wrap: wrap;
   }
 
   nav ul li a {
@@ -1019,7 +1063,7 @@ footer ul li a:hover {
   .descripcion {
     padding: 20px;
   }
-  .info-enlaces{
+  .info-enlaces {
     text-align: center;
   }
 
@@ -1036,11 +1080,10 @@ footer ul li a:hover {
     align-items: start;
   }
 
-  .tarjerta-producto{
+  .tarjerta-producto {
     min-width: 50vw;
     min-height: fit-content;
   }
-
 
   .informacion-servicio {
     transform: translateY(100%) translateY(-80px);
